@@ -1,0 +1,290 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Upload & View Notes</title>
+  <link rel="stylesheet" href="link.css" />
+</head>
+<body> -->
+
+<!-- Header -->
+<!-- <header class="navbar">
+    <div class="logo">Mindora</div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="About.html">About</a>
+      <a href="Blog.html">Blog</a>
+      <a href="#">Contact Us</a>
+    </nav>
+  </header> -->
+
+<!-- Upload Section -->
+<!-- <section class="notes-section">
+    <h2>Upload Notes</h2>
+    <div class="upload-box">
+      <input type="file" id="fileInput" /><br><br>
+      <label for="courseSelect"><strong>Select Course:</strong></label><br>
+      <select id="courseSelect">
+        <option value="B.Tech">B.Tech</option>
+        <option value="BBA">BBA</option>
+        <option value="BCA">BCA</option>
+        <option value="M.Tech">M.Tech</option>
+        <option value="MCA">MCA</option>
+        <option value="MBA">MBA</option>
+      </select><br><br>
+      <button onclick="uploadNotes()">Upload</button>
+    </div>
+  </section> -->
+
+<!-- Categorized Notes Display -->
+<!-- <section class="notes-display">
+    <h2>Available Notes</h2>
+
+    <div class="course-section" id="B.Tech">
+      <h3>B.Tech Notes</h3>
+      <ul></ul>
+    </div>
+
+    <div class="course-section" id="BBA">
+      <h3>BBA Notes</h3>
+      <ul></ul>
+    </div>
+
+    <div class="course-section" id="BCA">
+      <h3>BCA Notes</h3>
+      <ul></ul>
+    </div>
+
+    <div class="course-section" id="M.Tech">
+      <h3>M.Tech Notes</h3>
+      <ul></ul>
+    </div>
+
+    <div class="course-section" id="MCA">
+      <h3>MCA Notes</h3>
+      <ul></ul>
+    </div>
+
+    <div class="course-section" id="MBA">
+      <h3>MBA Notes</h3>
+      <ul></ul>
+    </div>
+  </section>
+
+  <-- JavaScript -->
+<!-- <script>
+    function uploadNotes() {
+      const fileInput = document.getElementById("fileInput");
+      const courseSelect = document.getElementById("courseSelect");
+      const courseName = courseSelect.value;
+
+      if (fileInput.files.length > 0) {
+        const file = fileInput.files[0];
+        const fileName = file.name;
+
+        const section = document.getElementById(courseName);
+        const ul = section.querySelector("ul");
+
+        const li = document.createElement("li");
+        li.innerHTML = `${fileName} <button onclick="viewNotes('${fileName}', '${courseName}')">View Notes</button>`;
+        ul.appendChild(li);
+
+        fileInput.value = "";
+      } else {
+        alert("Please select a file to upload.");
+      }
+    }
+
+    function viewNotes(fileName, courseName) {
+      alert(`Viewing "${fileName}" from ${courseName}`); -->
+<!-- // You can later embed PDF preview or open file here
+    }
+  </script>
+
+</body>
+</html>  -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Upload & View Notes</title>
+    <link rel="stylesheet" href="link.css" />
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="navbar">
+      <div class="logo">Mindora</div>
+      <nav>
+        <a href="home.html">Home</a>
+        <a href="About.html">About</a>
+        <a href="Blog.html">Blog</a>
+        <a href="Course.html">Course</a>
+      </nav>
+    </header>
+
+    <!-- Upload Form -->
+     <div>
+    <section class="notes-section">
+      <h2>Upload Notes</h2>
+      <div class="upload-box">
+        <input type="file" id="fileInput" /><br /><br />
+
+        <label><strong>Select Course:</strong></label
+        ><br />
+        <select id="courseSelect">
+          <option value="B.Tech">B.Tech</option>
+          <option value="BBA">BBA</option>
+          <option value="BCA">BCA</option>
+          <option value="M.Tech">M.Tech</option>
+          <option value="MCA">MCA</option>
+          <option value="MBA">MBA</option></select
+        ><br /><br />
+
+        <label><strong>Select Category:</strong></label
+        ><br />
+        <select id="categorySelect">
+          <option value="Previous">Previous Year RGPV Paper</option>
+          <option value="MidTerm">Mid-Term Paper</option>
+          <option value="Books">Books / Study Material</option></select
+        ><br /><br />
+
+        <button onclick="uploadNotes()">Upload</button>
+      </div>
+    </section>
+
+    <!-- Notes Display -->
+    <section class="notes-display">
+      <h2>Available Notes by Course & Category</h2>
+
+      <!-- Course Sections -->
+       <div id="course-div">
+      <div class="course-notes" id="B.Tech">
+        <h2>B.Tech</h2>
+        <div class="sub-category">
+          <h4>📄 Previous Year RGPV Papers</h4>
+          <ul id="B.Tech-Previous"></ul>
+        </div>
+        <div class="sub-category">
+          <h4>📝 Mid-Term Papers</h4>
+          <ul id="B.Tech-MidTerm"></ul>
+        </div>
+        <div class="sub-category">
+          <h4>📚 Books / Study Material</h4>
+          <ul id="B.Tech-Books"></ul>
+        </div>
+      </div>
+
+      <!-- Repeat for other courses -->
+      <!-- <div class="course-notes" id="BBA"> -->
+      <div class="course-notes" id="bba">
+        <h2>BBA</h2>
+        <div class="sub-category">
+          <h4>📄 Previous Year RGPV Papers</h4>
+          <ul id="BBA-Previous"></ul>
+        </div>
+        <div class="sub-category">
+          <h4>📝 Mid-Term Papers</h4>
+          <ul id="BBA-MidTerm"></ul>
+        </div>
+        <div class="sub-category">
+          <h4>📚 Books / Study Material</h4>
+          <ul id="BBA-Books"></ul>
+        </div>
+      </div>
+
+      <div class="course-notes" id="BCA">
+        <h2>BCA</h2>
+        <div class="sub-category">
+          <h4>📄 Previous Year RGPV Papers</h4>
+          <ul id="BCA-Previous"></ul>
+        </div>
+        <div class="sub-category">
+          <h4>📝 Mid-Term Papers</h4>
+          <ul id="BCA-MidTerm"></ul>
+        </div>
+        <div class="sub-category">
+          <h4>📚 Books / Study Material</h4>
+          <ul id="BCA-Books"></ul>
+        </div>
+      </div>
+
+      <div class="course-notes" id="M.Tech">
+        <h2>M.Tech</h2>
+        <div class="sub-category">
+          <h4>📄 Previous Year RGPV Papers</h4>
+          <ul id="M.Tech-Previous"></ul>
+        </div>
+        <div class="sub-category">
+          <h4>📝 Mid-Term Papers</h4>
+          <ul id="M.Tech-MidTerm"></ul>
+        </div>
+        <div class="sub-category">
+          <h4>📚 Books / Study Material</h4>
+          <ul id="M.Tech-Books"></ul>
+        </div>
+      </div>
+
+      <div class="course-notes" id="MCA">
+        <h2>MCA</h2>
+        <div class="sub-category">
+          <h4>📄 Previous Year RGPV Papers</h4>
+          <ul id="MCA-Previous"></ul>
+        </div>
+        <div class="sub-category">
+          <h4>📝 Mid-Term Papers</h4>
+          <ul id="MCA-MidTerm"></ul>
+        </div>
+        <div class="sub-category">
+          <h4>📚 Books / Study Material</h4>
+          <ul id="MCA-Books"></ul>
+        </div>
+      </div>
+
+      <div class="course-notes" id="MBA">
+        <h2>MBA</h2>
+        <div class="sub-category">
+          <h4>📄 Previous Year RGPV Papers</h4>
+          <ul id="MBA-Previous"></ul>
+        </div>
+        <div class="sub-category">
+          <h4>📝 Mid-Term Papers</h4>
+          <ul id="MBA-MidTerm"></ul>
+        </div>
+        <div class="sub-category">
+          <h4>📚 Books / Study Material</h4>
+          <ul id="MBA-Books"></ul>
+        </div>
+      </div>
+    </section>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+      function uploadNotes() {
+        const fileInput = document.getElementById("fileInput");
+        const course = document.getElementById("courseSelect").value;
+        const category = document.getElementById("categorySelect").value;
+
+        if (fileInput.files.length > 0) {
+          const fileName = fileInput.files[0].name;
+          const listId = `${course}-${category}`;
+          const list = document.getElementById(listId);
+
+          const li = document.createElement("li");
+          li.innerHTML = `${fileName} <button onclick="viewNotes('${fileName}', '${course}', '${category}')">View Notes</button>`;
+          list.appendChild(li);
+
+          fileInput.value = "";
+        } else {
+          alert("Please select a file to upload.");
+        }
+      }
+
+      function viewNotes(fileName, course, category) {
+        alert(`Viewing "${fileName}" from ${course} - ${category}`);
+      }
+    </script>
+  </body>
+</html>
