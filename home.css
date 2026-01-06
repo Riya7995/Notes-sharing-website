@@ -110,7 +110,8 @@ body {
 }
 .course {
   width: 400px;
-  background: #f2e4c5;
+  /* background: #f2e4c5; */
+  background-color: lightcyan;
   border-radius: 10px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
   padding-bottom: 100px;
@@ -124,13 +125,51 @@ body {
 .course h3 {
   margin: 10px 0;
 }
-.btn-small {
-  background: #b82c2c;
-  color: white;
-  padding: 15px 15px;
-  border: none;
-  border-radius: 20px;
+.btn-courses{
+    /* Size & Space */
+    width: 150px;
+    height: 45px;
+    padding: 10px 20px;
+    margin: 10px;
+
+    /* Color */
+    background-color: gray;
+    color: white;
+
+    /* Border */
+    border: 2px solid #92b300;
+    border-radius: 10px;
+
+    /* Text */
+    font-size: 16px;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    text-align: center;
+    text-transform: uppercase;
+
+    /* Effect */
+    cursor: pointer;
+    box-shadow: 3px 3px 6px gray;
+    outline: none;
+
+    /* Animation */
+    transition: all 0.3s ease;
 }
+
+/* Hover effect */
+.btn-courses:hover{
+    background-color: #b3000f;
+    color: yellow;
+    transform: scale(1.05);
+}
+
+/* Click effect */
+.btn-courses:active{
+    background-color: red;
+    box-shadow: 1px 1px 3px gray;
+}
+
+
 
 /* Categories */
 .categories {
